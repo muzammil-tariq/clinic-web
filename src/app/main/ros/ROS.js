@@ -4,6 +4,9 @@ import Typography from '@material-ui/core/Typography';
 import Body from './Components/body';
 import axios from '../../services/axiosbaseinstance';
 
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Button from '@material-ui/core/Button';
 
 const initialRosArray = [
@@ -13,45 +16,31 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Recent Wieght Loss',
-				yes: '',
-				no: ''
+				title: 'Recent Wieght Loss'
 			},
 			{
 				id: 2,
-				title: 'Fever',
-				yes: '',
-				no: ''
+				title: 'Fever'
 			},
 			{
 				id: 3,
-				title: 'Chill',
-				yes: '',
-				no: ''
+				title: 'Chill'
 			},
 			{
 				id: 4,
-				title: 'Body aches / fatigue',
-				yes: '',
-				no: ''
+				title: 'Body aches / fatigue'
 			},
 			{
 				id: 5,
-				title: 'Loss of Apitite',
-				yes: '',
-				no: ''
+				title: 'Loss of Apitite'
 			},
 			{
 				id: 6,
-				title: 'Excessive sweating',
-				yes: '',
-				no: ''
+				title: 'Excessive sweating'
 			},
 			{
 				id: 7,
-				title: 'Sleep disorder',
-				yes: '',
-				no: ''
+				title: 'Sleep disorder'
 			}
 		]
 	},
@@ -62,27 +51,19 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Cough',
-				yes: '',
-				no: ''
+				title: 'Cough'
 			},
 			{
 				id: 2,
-				title: 'Shortness of Breath',
-				yes: '',
-				no: ''
+				title: 'Shortness of Breath'
 			},
 			{
 				id: 3,
-				title: 'Wheezing',
-				yes: '',
-				no: ''
+				title: 'Wheezing'
 			},
 			{
 				id: 4,
-				title: 'Hemoptysis',
-				yes: '',
-				no: ''
+				title: 'Hemoptysis'
 			}
 		]
 	},
@@ -92,27 +73,19 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Rashes',
-				yes: '',
-				no: ''
+				title: 'Rashes'
 			},
 			{
 				id: 2,
-				title: 'Sores',
-				yes: '',
-				no: ''
+				title: 'Sores'
 			},
 			{
 				id: 3,
-				title: 'Blister',
-				yes: '',
-				no: ''
+				title: 'Blister'
 			},
 			{
 				id: 4,
-				title: 'Growths',
-				yes: '',
-				no: ''
+				title: 'Growths'
 			}
 		]
 	},
@@ -122,15 +95,11 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Visual Changes',
-				yes: '',
-				no: ''
+				title: 'Visual Changes'
 			},
 			{
 				id: 2,
-				title: 'Red eye',
-				yes: '',
-				no: ''
+				title: 'Red eye'
 			}
 		]
 	},
@@ -140,45 +109,31 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Abdominal Pain',
-				yes: '',
-				no: ''
+				title: 'Abdominal Pain'
 			},
 			{
 				id: 2,
-				title: 'Heart burn/Gerd',
-				yes: '',
-				no: ''
+				title: 'Heart burn/Gerd'
 			},
 			{
 				id: 3,
-				title: 'Nausea/Vomiting',
-				yes: '',
-				no: ''
+				title: 'Nausea/Vomiting'
 			},
 			{
 				id: 4,
-				title: 'Constipation',
-				yes: '',
-				no: ''
+				title: 'Constipation'
 			},
 			{
 				id: 5,
-				title: 'Diarrhea',
-				yes: '',
-				no: ''
+				title: 'Diarrhea'
 			},
 			{
 				id: 6,
-				title: 'Hematesis',
-				yes: '',
-				no: ''
+				title: 'Hematesis'
 			},
 			{
 				id: 7,
-				title: 'Blood in Stool',
-				yes: '',
-				no: ''
+				title: 'Blood in Stool'
 			}
 		]
 	},
@@ -188,27 +143,19 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Numbness/Tingling Sensation',
-				yes: '',
-				no: ''
+				title: 'Numbness/Tingling Sensation'
 			},
 			{
 				id: 2,
-				title: 'Sensation Loss',
-				yes: '',
-				no: ''
+				title: 'Sensation Loss'
 			},
 			{
 				id: 3,
-				title: 'Burning Sensations',
-				yes: '',
-				no: ''
+				title: 'Burning Sensations'
 			},
 			{
 				id: 4,
-				title: 'Seizures',
-				yes: '',
-				no: ''
+				title: 'Seizures'
 			}
 		]
 	},
@@ -218,27 +165,19 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Hearing Loss',
-				yes: '',
-				no: ''
+				title: 'Hearing Loss'
 			},
 			{
 				id: 2,
-				title: 'Nasal discharge',
-				yes: '',
-				no: ''
+				title: 'Nasal discharge'
 			},
 			{
 				id: 3,
-				title: 'Epitaxis',
-				yes: '',
-				no: ''
+				title: 'Epitaxis'
 			},
 			{
 				id: 4,
-				title: 'Dysphagia',
-				yes: '',
-				no: ''
+				title: 'Dysphagia'
 			}
 		]
 	},
@@ -248,15 +187,11 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Allergic Reaction',
-				yes: '',
-				no: ''
+				title: 'Allergic Reaction'
 			},
 			{
 				id: 2,
-				title: 'Recurrent Infection',
-				yes: '',
-				no: ''
+				title: 'Recurrent Infection'
 			}
 		]
 	},
@@ -266,15 +201,11 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Nervousness/Anxiety',
-				yes: '',
-				no: ''
+				title: 'Nervousness/Anxiety'
 			},
 			{
 				id: 2,
-				title: 'Depression',
-				yes: '',
-				no: ''
+				title: 'Depression'
 			}
 		]
 	},
@@ -284,63 +215,43 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Chest Pain/Discomfort',
-				yes: '',
-				no: ''
+				title: 'Chest Pain/Discomfort'
 			},
 			{
 				id: 2,
-				title: 'Palpitaion / Arrythmia',
-				yes: '',
-				no: ''
+				title: 'Palpitaion / Arrythmia'
 			},
 			{
 				id: 3,
-				title: 'Shortness of Breath',
-				yes: '',
-				no: ''
+				title: 'Shortness of Breath'
 			},
 			{
 				id: 4,
-				title: 'Perepheral Edema',
-				yes: '',
-				no: ''
+				title: 'Perepheral Edema'
 			},
 			{
 				id: 5,
-				title: 'Orthopnea',
-				yes: '',
-				no: ''
+				title: 'Orthopnea'
 			},
 			{
 				id: 6,
-				title: 'PND',
-				yes: '',
-				no: ''
+				title: 'PND'
 			},
 			{
 				id: 7,
-				title: 'Syncope',
-				yes: '',
-				no: ''
+				title: 'Syncope'
 			},
 			{
 				id: 8,
-				title: 'Vericose Vaiens',
-				yes: '',
-				no: ''
+				title: 'Vericose Vaiens'
 			},
 			{
 				id: 9,
-				title: 'Cramping in Legs',
-				yes: '',
-				no: ''
+				title: 'Cramping in Legs'
 			},
 			{
 				id: 10,
-				title: 'Others',
-				yes: '',
-				no: ''
+				title: 'Others'
 			}
 		]
 	},
@@ -350,33 +261,23 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Frequency',
-				yes: '',
-				no: ''
+				title: 'Frequency'
 			},
 			{
 				id: 2,
-				title: 'Urgency',
-				yes: '',
-				no: ''
+				title: 'Urgency'
 			},
 			{
 				id: 3,
-				title: 'Incontenence',
-				yes: '',
-				no: ''
+				title: 'Incontenence'
 			},
 			{
 				id: 4,
-				title: 'Dysuria',
-				yes: '',
-				no: ''
+				title: 'Dysuria'
 			},
 			{
 				id: 5,
-				title: 'Hematuria',
-				yes: '',
-				no: ''
+				title: 'Hematuria'
 			}
 		]
 	},
@@ -386,39 +287,27 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Heat intolerence',
-				yes: '',
-				no: ''
+				title: 'Heat intolerence'
 			},
 			{
 				id: 2,
-				title: 'Cold intolerence',
-				yes: '',
-				no: ''
+				title: 'Cold intolerence'
 			},
 			{
 				id: 3,
-				title: 'Polydypsia',
-				yes: '',
-				no: ''
+				title: 'Polydypsia'
 			},
 			{
 				id: 4,
-				title: 'Polyuria',
-				yes: '',
-				no: ''
+				title: 'Polyuria'
 			},
 			{
 				id: 5,
-				title: 'Polyphagia',
-				yes: '',
-				no: ''
+				title: 'Polyphagia'
 			},
 			{
 				id: 6,
-				title: 'Weight Gain',
-				yes: '',
-				no: ''
+				title: 'Weight Gain'
 			}
 		]
 	},
@@ -428,27 +317,19 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Joint Pain/Swelling',
-				yes: '',
-				no: ''
+				title: 'Joint Pain/Swelling'
 			},
 			{
 				id: 2,
-				title: 'Stiffness',
-				yes: '',
-				no: ''
+				title: 'Stiffness'
 			},
 			{
 				id: 3,
-				title: 'Muscle pain',
-				yes: '',
-				no: ''
+				title: 'Muscle pain'
 			},
 			{
 				id: 4,
-				title: 'Muscle pain',
-				yes: '',
-				no: ''
+				title: 'Muscle pain'
 			}
 		]
 	},
@@ -458,15 +339,11 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Abnormal Bleeding',
-				yes: '',
-				no: ''
+				title: 'Abnormal Bleeding'
 			},
 			{
 				id: 2,
-				title: 'Brusing',
-				yes: '',
-				no: ''
+				title: 'Brusing'
 			}
 		]
 	},
@@ -476,37 +353,65 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
-				title: 'Menorrhagia',
-				yes: '',
-				no: ''
+				title: 'Menorrhagia'
 			},
 			{
 				id: 2,
-				title: 'Vaginal Discharge',
-				yes: '',
-				no: ''
+				title: 'Vaginal Discharge'
 			},
 			{
 				id: 3,
-				title: 'Lump Breast',
-				yes: '',
-				no: ''
+				title: 'Lump Breast'
 			}
 		]
 	}
 ];
 
 const ROS = () => {
-	const [rosData, setRosData] = useState(initialRosArray);
+	const [rosDataa, setRosDataa] = useState(initialRosArray);
+	const [rosData, setRosData] = useState({
+		weightLoss: false,
+		fever: false,
+		chill: false,
+		bodyAshes: false,
+		lossOfApitite: false,
+		excessiveSwesting: false,
+		sleepDisorder: false,
+		visualChanges: false,
+		redEye: false,
+		hearingLoss: false,
+		nasalDischarge: false,
+		epitaxis: false,
+		dysphagia: false,
+		chestPain: false,
+		palpitations: false,
+		shortnessOfBreath: false,
+		perepheralEdema: false,
+		orthopnea: false,
+		pnd: false,
+		syncope: false,
+		vericoseVaiens: false,
+		crampingInLegs: false,
+		other: false,
+		respiratoryShortnessOfBreath: false,
+		cough: false,
+		wheezing: false,
+		hemoptysis: false,
+		abdominalPain: false,
+		heartBurn: false,
+		nausea: false,
+		constipation: false,
+		diarrhea: false,
+		hematesis: false,
+		bloodShoot: false,
+		allergicReaction: false,
+		patientId: ''
+	});
 
-	function handleChange(newValue) {
-		// const newData = [...rosData];
-		debugger;
-		setRosData(newValue)
-		
-		alert( JSON.stringify(rosData))
-		
-	  }
+	function handleChange(e) {
+		const { name, value } = e.target;
+		setRosData(prevState => ({ ...prevState, [name]: value }));
+	}
 
 	function handleSaveProduct() {
 		let data = rosData;
@@ -518,8 +423,6 @@ const ROS = () => {
 			.catch(er => {
 				debugger;
 			});
-
-		// dispatch(createHistories(getValues()));
 	}
 	return (
 		<FusePageSimple
@@ -528,18 +431,51 @@ const ROS = () => {
 					<div class="md:flex w-full text-center p-20 justify-center">
 						<Typography variant="h4">Review of System(ROS)</Typography>
 					</div>
-					<div className=" md:flex w-full border p-10 rounded border-gray-400">
-						<Button variant="contained" onClick={handleSaveProduct}>
-							Submit
-						</Button>
-					</div>
-
-					<div className=" md:flex w-full border p-10 rounded border-gray-400">{JSON.stringify(rosData)}</div>
 
 					{/*Rapid Assesment*/}
+
 					<div class="w-full px-20 pb-20">
+						<div className=" md:flex w-full border p-10 rounded border-gray-400">
+							<Button variant="contained" onClick={handleSaveProduct}>
+								Submit
+							</Button>
+						</div>
 						<div class=" w-full border p-10 rounded border-gray-400 ">
-							<Body data={rosData} onChange={handleChange} />
+							<Body data={rosDataa} onChange={handleChange} />
+							<div class="grid grid-cols-2 gap-4">
+								<div class=" p-6">
+									<div class="w-full border p-10 rounded border-gray-400 bg-white">
+										<div class="py-10">
+											<Typography variant="subtitle2">
+												<b>Constitutional / General</b>
+											</Typography>
+										</div>
+										<div class="flex items-center">
+											<div class=" w-2/4">
+												<Typography variant="subtitle2">Abdominal Pain</Typography>
+											</div>
+											<RadioGroup aria-label="abdominalPain" row name="abdominalPain">
+												<FormControlLabel
+													onChange={event => {
+														handleChange(event);
+													}}
+													value="true"
+													control={<Radio />}
+													label="Yes"
+												/>
+												<FormControlLabel
+													onChange={event => {
+														handleChange(event);
+													}}
+													value="false"
+													control={<Radio />}
+													label="No"
+												/>
+											</RadioGroup>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
