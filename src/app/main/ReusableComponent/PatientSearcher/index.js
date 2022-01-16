@@ -8,23 +8,57 @@ import Button from '@material-ui/core/Button';
 import axios from '../../../services/axiosbaseinstance';
 
 const HistoryMedicationComponent = props => {
-	const [patient, setPatient] = useState({ patientName: '', cnic: '', phoneNumber: '', email: '' });
+	const [cnic, setPatientCNIC] = useState('91082091820912');
+	const [errors, setErrors] = useState('');
+	const [patient, setPatient] = useState({});
+	const [user, setUser] = useState({
+		gender: '',
+		id: '',
+		email: '',
+		firstName: '',
+		lastName: '',
+		date: '',
+		age: '',
+		phoneNumber: '',
+		address: '',
+		city: '',
+		cnic: ''
+	});
 
 	// handle input change
 	const handleChangeState = e => {
-		const { name, value } = e.target;
-		setPatient(prevState => ({ ...prevState, [name]: value }));
+		const { value } = e.target;
+		setPatientCNIC(value);
 	};
 
 	function getPatientDetails() {
-		debugger;
+		setPatient({});
+		setUser({
+			gender: '',
+			id: '',
+			email: '',
+			firstName: '',
+			lastName: '',
+			date: '',
+			age: '',
+			phoneNumber: '',
+			address: '',
+			city: '',
+			cnic: ''
+		});
+		props.getPatientId('');
+
 		axios
-			.get('api/patients/getPatientByCNIC/91082091820912')
+			.get(`api/patients/getPatientByCNIC/${cnic}`)
 			.then(async response => {
-				setPatient(response);
+				setPatient(response.patient);
+				setUser(response.user);
+				props.getPatientId(response.patient._id);
+				setErrors('');
 			})
 			.catch(er => {
 				debugger;
+				setErrors('No Patient found.');
 			});
 	}
 
@@ -41,9 +75,12 @@ const HistoryMedicationComponent = props => {
 									label="Patient CNIC"
 									name="cnic"
 									variant="outlined"
+									value={cnic}
 									size="small"
 									fullWidth
 									onChange={handleChangeState}
+									error={errors && true}
+									helperText={errors}
 								/>
 							</div>
 							<br />
@@ -59,12 +96,26 @@ const HistoryMedicationComponent = props => {
 							<TextField
 								className="m-10"
 								placeholder=""
-								label="Patient Name"
+								label="Patient First Name"
 								name="cnic"
 								variant="outlined"
 								size="small"
 								fullWidth
-								onChange={handleChangeState}
+								disabled
+								value={user.firstName}
+							/>
+						</Grid>
+						<Grid item xs={3}>
+							<TextField
+								className="m-10"
+								placeholder=""
+								label="Patient Last Name"
+								name="cnic"
+								variant="outlined"
+								size="small"
+								fullWidth
+								disabled
+								value={user.lastName}
 							/>
 						</Grid>
 						<Grid item xs={3}>
@@ -76,7 +127,8 @@ const HistoryMedicationComponent = props => {
 								variant="outlined"
 								size="small"
 								fullWidth
-								onChange={handleChangeState}
+								disabled
+								value={user.email}
 							/>
 						</Grid>
 						<Grid item xs={3}>
@@ -88,19 +140,8 @@ const HistoryMedicationComponent = props => {
 								variant="outlined"
 								size="small"
 								fullWidth
-								onChange={handleChangeState}
-							/>
-						</Grid>
-						<Grid item xs={3}>
-							<TextField
-								className="m-10"
-								placeholder=""
-								label="Patient CNIC"
-								name="cnic"
-								variant="outlined"
-								size="small"
-								fullWidth
-								onChange={handleChangeState}
+								disabled
+								value={user.phoneNumber}
 							/>
 						</Grid>
 					</Grid>

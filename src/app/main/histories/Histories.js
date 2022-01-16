@@ -48,6 +48,11 @@ const Histories = () => {
 		setSurgicalHistory(data);
 	}
 
+	function handleGetPatientId(data) {
+		debugger;
+		setHistoryData({ ...historyData, patientId: data });
+	}
+
 	function handleSaveProduct() {
 		let data = {
 			history: historyData,
@@ -106,7 +111,7 @@ const Histories = () => {
 		<FusePageSimple
 			content={
 				<div className="md:p-24">
-					<PatientSeacrher />
+					<PatientSeacrher getPatientId={handleGetPatientId} />
 					<div className="md:flex w-full text-center p-20 justify-center">
 						<Typography variant="h4">Histories</Typography>
 					</div>
