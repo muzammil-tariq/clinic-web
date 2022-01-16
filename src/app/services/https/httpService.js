@@ -74,7 +74,6 @@ class JwtService extends FuseUtils.EventEmitter {
 				})
 				.catch(er => {
 					console.log(er);
-					debugger;
 				});
 		});
 	};

@@ -22,14 +22,14 @@ const Histories = () => {
 	// const { formState, watch, getValues } = methods;
 
 	const [historyData, setHistoryData] = useState({
-		hpi: 'good',
-		pfsh: 'good',
-		past: 'good',
-		family: 'good',
-		social: 'good',
-		occupational: 'good',
-		medical: 'good',
-		PatientId: '61ddca81fd25250b80da0e83'
+		hpi: '',
+		pfsh: '',
+		past: '',
+		family: '',
+		social: '',
+		occupational: '',
+		medical: '',
+		PatientId: ''
 	});
 
 	const [surgicalHistory, setSurgicalHistory] = useState([]);
@@ -49,7 +49,6 @@ const Histories = () => {
 	}
 
 	function handleGetPatientId(data) {
-		debugger;
 		setHistoryData({ ...historyData, patientId: data });
 	}
 
