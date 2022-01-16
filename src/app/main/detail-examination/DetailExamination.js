@@ -4,23 +4,24 @@ import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import axios from '../../services/axiosbaseinstance';
 import Button from '@material-ui/core/Button';
+import PatientSeacrher from '../ReusableComponent/PatientSearcher';
 
 const DetailExamination = () => {
 	const [detailExaminationData, setDetailExaminationData] = useState({
-		general_appearance: '',
-		skin_integumantary: '',
-		head_neck: '',
+		generalAppearance: '',
+		skin: '',
+		headNeck: '',
 		eye: '',
 		ent: '',
-		cardiovascular_system: '',
-		respiratory_system: '',
-		gastrointestinal_system: '',
-		urogenital_system: '',
-		central_nervous_system: '',
-		endocrinal_system: '',
-		musculoskeletal_system: '',
-		gynae_obs: '',
-		psychatric_mental_health: ''
+		cardiovascularSystem: '',
+		respiratorySystem: '',
+		gastrointestinalSystem: '',
+		urogenitalSystem: '',
+		centralNervousSystem: '',
+		endocrineSystem: '',
+		musculoSkeletalSystem: '',
+		gynae: '',
+		psychiatric: ''
 	});
 
 	const onChangeUseState = e => {
@@ -29,30 +30,44 @@ const DetailExamination = () => {
 	};
 
 	function handleSaveDetailExamination() {
-		let data = detailExaminationData;
-		axios
-			.post('api/auth/test', data)
-			.then(response => {
-				debugger;
-			})
-			.catch(er => {
-				debugger;
+		try {
+			axios.post('api/detailsexams', detailExaminationData);
+			setDetailExaminationData({
+				generalAppearance: '',
+				skin: '',
+				headNeck: '',
+				eye: '',
+				ent: '',
+				cardiovascularSystem: '',
+				respiratorySystem: '',
+				gastrointestinalSystem: '',
+				urogenitalSystem: '',
+				centralNervousSystem: '',
+				endocrineSystem: '',
+				musculoSkeletalSystem: '',
+				gynae: '',
+				psychiatric: ''
 			});
-
-		// dispatch(createHistories(getValues()));
+		} catch (error) {
+			console.log(error.errMsg);
+		}
 	}
 
-
+	function handleGetPatientId(data) {
+		setDetailExaminationData({ ...detailExaminationData, patientId: data });
+	}
 	return (
 		<FusePageSimple
 			content={
 				<div className="md:p-24">
+					<PatientSeacrher getPatientId={handleGetPatientId} />
+
 					<div class="md:flex w-full text-center p-20 justify-center">
 						<Typography variant="h4">Detail Examination</Typography>
 					</div>
 
 					<div class="w-full px-20 pb-20">
-					<div className=" md:flex w-full border p-10 rounded border-gray-400">
+						<div className=" md:flex w-full border p-10 rounded border-gray-400">
 							<Button variant="contained" onClick={handleSaveDetailExamination}>
 								Submit
 							</Button>
@@ -64,8 +79,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="General appearance"
-										name="general_appearance"
-										value={detailExaminationData.general_appearance}
+										name="generalAppearance"
+										value={detailExaminationData.generalAppearance}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -77,8 +92,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="Skin & Integumantary"
-										name="skin_integumantary"
-										value={detailExaminationData.skin_integumantary}
+										name="skin"
+										value={detailExaminationData.skin}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -90,8 +105,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="Head and Neck "
-										name="head_neck"
-										value={detailExaminationData.head_neck}
+										name="headNeck"
+										value={detailExaminationData.headNeck}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -129,8 +144,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="Cardiovascular System"
-										name="cardiovascular_system"
-										value={detailExaminationData.cardiovascular_system}
+										name="cardiovascularSystem"
+										value={detailExaminationData.cardiovascularSystem}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -142,8 +157,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="Respiratory System"
-										name="respiratory_system"
-										value={detailExaminationData.respiratory_system}
+										name="respiratorySystem"
+										value={detailExaminationData.respiratorySystem}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -155,8 +170,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="Gastrointestinal System"
-										name="gastrointestinal_system"
-										value={detailExaminationData.gastrointestinal_system}
+										name="gastrointestinalSystem"
+										value={detailExaminationData.gastrointestinalSystem}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -168,8 +183,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="UroGenital System"
-										name="urogenital_system"
-										value={detailExaminationData.urogenital_system}
+										name="urogenitalSystem"
+										value={detailExaminationData.urogenitalSystem}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -181,8 +196,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="Central Nervous System"
-										name="central_nervous_system"
-										value={detailExaminationData.central_nervous_system}
+										name="centralNervousSystem"
+										value={detailExaminationData.centralNervousSystem}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -194,8 +209,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="Endocrinal System"
-										name="endocrinal_system"
-										value={detailExaminationData.endocrinal_system}
+										name="endocrineSystem"
+										value={detailExaminationData.endocrineSystem}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -207,8 +222,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="MusculoSkeletal System"
-										name="musculoskeletal_system"
-										value={detailExaminationData.musculoskeletal_system}
+										name="musculoSkeletalSystem"
+										value={detailExaminationData.musculoSkeletalSystem}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -220,8 +235,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="Gynae & Obs."
-										name="gynae_obs"
-										value={detailExaminationData.gynae_obs}
+										name="gynae"
+										value={detailExaminationData.gynae}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -233,8 +248,8 @@ const DetailExamination = () => {
 										placeholder=""
 										id=""
 										label="Psychatric & Mental Health"
-										name="psychatric_mental_health"
-										value={detailExaminationData.psychatric_mental_health}
+										name="psychiatric"
+										value={detailExaminationData.psychiatric}
 										variant="outlined"
 										size="small"
 										fullWidth

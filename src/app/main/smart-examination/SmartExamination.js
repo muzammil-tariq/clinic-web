@@ -30,7 +30,7 @@ const SmartExamination = () => {
 
 	function handleSaveSmartExamination() {
 		try {
-			const response = axios.post('api/smart-examination', smartExaminationData);
+			axios.post('api/smart-examination', smartExaminationData);
 			setSmartExaminationData({
 				FaceAndEyes: '',
 				ExtraOcular: '',
