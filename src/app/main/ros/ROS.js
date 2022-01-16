@@ -4,6 +4,9 @@ import Typography from '@material-ui/core/Typography';
 import Body from './Components/body';
 import axios from '../../services/axiosbaseinstance';
 
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Button from '@material-ui/core/Button';
 
 const initialRosArray = [
@@ -365,11 +368,49 @@ const initialRosArray = [
 ];
 
 const ROS = () => {
-	const [rosData, setRosData] = useState(initialRosArray);
+	const [rosDataa, setRosDataa] = useState(initialRosArray);
+	const [rosData, setRosData] = useState({
+		weightLoss: false,
+		fever: false,
+		chill: false,
+		bodyAshes: false,
+		lossOfApitite: false,
+		excessiveSwesting: false,
+		sleepDisorder: false,
+		visualChanges: false,
+		redEye: false,
+		hearingLoss: false,
+		nasalDischarge: false,
+		epitaxis: false,
+		dysphagia: false,
+		chestPain: false,
+		palpitations: false,
+		shortnessOfBreath: false,
+		perepheralEdema: false,
+		orthopnea: false,
+		pnd: false,
+		syncope: false,
+		vericoseVaiens: false,
+		crampingInLegs: false,
+		other: false,
+		respiratoryShortnessOfBreath: false,
+		cough: false,
+		wheezing: false,
+		hemoptysis: false,
+		abdominalPain: false,
+		heartBurn: false,
+		nausea: false,
+		constipation: false,
+		diarrhea: false,
+		hematesis: false,
+		bloodShoot: false,
+		allergicReaction: false,
+		patientId: ''
+	});
 
-	function handleChange(newValue) {
-		debugger;
-		setRosData(newValue);
+	function handleChange(e) {
+		const { name, value } = e.target;
+		setRosData(prevState => ({ ...prevState, [name]: value }));
 	}
 
 	function handleSaveProduct() {
@@ -400,7 +441,41 @@ const ROS = () => {
 							</Button>
 						</div>
 						<div class=" w-full border p-10 rounded border-gray-400 ">
-							<Body data={rosData} onChange={handleChange} />
+							<Body data={rosDataa} onChange={handleChange} />
+							<div class="grid grid-cols-2 gap-4">
+								<div class=" p-6">
+									<div class="w-full border p-10 rounded border-gray-400 bg-white">
+										<div class="py-10">
+											<Typography variant="subtitle2">
+												<b>Constitutional / General</b>
+											</Typography>
+										</div>
+										<div class="flex items-center">
+											<div class=" w-2/4">
+												<Typography variant="subtitle2">Abdominal Pain</Typography>
+											</div>
+											<RadioGroup aria-label="abdominalPain" row name="abdominalPain">
+												<FormControlLabel
+													onChange={event => {
+														handleChange(event);
+													}}
+													value="true"
+													control={<Radio />}
+													label="Yes"
+												/>
+												<FormControlLabel
+													onChange={event => {
+														handleChange(event);
+													}}
+													value="false"
+													control={<Radio />}
+													label="No"
+												/>
+											</RadioGroup>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
