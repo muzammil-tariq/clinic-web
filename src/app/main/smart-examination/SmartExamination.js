@@ -4,23 +4,23 @@ import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import axios from '../../services/axiosbaseinstance';
 import Button from '@material-ui/core/Button';
+import PatientSeacrher from '../ReusableComponent/PatientSearcher';
 
 const SmartExamination = () => {
 	const [smartExaminationData, setSmartExaminationData] = useState({
-		face_eyes: '',
-		extra_ocular_movements: '',
-		pharynx_throat: '',
-		lymph_nodes_cervical: '',
-		hand_fingers: '',
-		pulse: '',
-		skin: '',
-		edema: '',
-		chest: '',
-		abdomen: '',
-		joints: '',
+		FaceAndEyes: '',
+		ExtraOcular: '',
+		PharynxThroat: '',
+		Lymph: '',
+		Hand: '',
+		Pulse: '',
+		Skin: '',
+		Edema: '',
+		Chest: '',
+		Abdomen: '',
+		Joints: '',
 		knee_reflex: '',
-		planter: '',
-		others: ''
+		Planter: ''
 	});
 
 	const onChangeUseState = e => {
@@ -29,29 +29,41 @@ const SmartExamination = () => {
 	};
 
 	function handleSaveSmartExamination() {
-		let data = smartExaminationData;
-		axios
-			.post('api/auth/test', data)
-			.then(response => {
-				debugger;
-			})
-			.catch(er => {
-				debugger;
+		try {
+			const response = axios.post('api/smart-examination', smartExaminationData);
+			setSmartExaminationData({
+				FaceAndEyes: '',
+				ExtraOcular: '',
+				PharynxThroat: '',
+				Lymph: '',
+				Hand: '',
+				Pulse: '',
+				Skin: '',
+				Edema: '',
+				Chest: '',
+				Abdomen: '',
+				Joints: '',
+				knee_reflex: '',
+				Planter: ''
 			});
-
+		} catch (error) {
+			console.log(error.errMsg);
+		}
 		// dispatch(createHistories(getValues()));
 	}
-
+	function handleGetPatientId(data) {
+		setSmartExaminationData({ ...smartExaminationData, patientId: data });
+	}
 	return (
 		<FusePageSimple
 			content={
 				<div className="md:p-24">
+					<PatientSeacrher getPatientId={handleGetPatientId} />
 					<div class="md:flex w-full text-center p-20 justify-center">
 						<Typography variant="h4">Smart Examination</Typography>
 					</div>
 
 					<div class="w-full px-20 pb-20">
-						
 						<div className=" md:flex w-full border p-10 rounded border-gray-400">
 							<Button variant="contained" onClick={handleSaveSmartExamination}>
 								Submit
@@ -64,8 +76,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Face & Eyes"
-										name="face_eyes"
-										value={smartExaminationData.face_eyes}
+										name="FaceAndEyes"
+										value={smartExaminationData.FaceAndEyes}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -77,8 +89,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Extra Ocular movements"
-										name="extra_ocular_movements"
-										value={smartExaminationData.extra_ocular_movements}
+										name="ExtraOcular"
+										value={smartExaminationData.ExtraOcular}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -90,8 +102,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Pharynx / Throat "
-										name="pharynx_throat"
-										value={smartExaminationData.pharynx_throat}
+										name="PharynxThroat"
+										value={smartExaminationData.PharynxThroat}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -103,8 +115,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Lymph nodes cervical"
-										name="lymph_nodes_cervical"
-										value={smartExaminationData.lymph_nodes_cervical}
+										name="Lymph"
+										value={smartExaminationData.Lymph}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -116,8 +128,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Hands & Fingers"
-										name="hand_fingers"
-										value={smartExaminationData.hand_fingers}
+										name="Hand"
+										value={smartExaminationData.Hand}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -129,8 +141,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Pulse"
-										name="pulse"
-										value={smartExaminationData.pulse}
+										name="Pulse"
+										value={smartExaminationData.Pulse}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -142,8 +154,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Skin"
-										name="skin"
-										value={smartExaminationData.skin}
+										name="Skin"
+										value={smartExaminationData.Skin}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -155,8 +167,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Edema"
-										name="edema"
-										value={smartExaminationData.edema}
+										name="Edema"
+										value={smartExaminationData.Edema}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -168,8 +180,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Chest"
-										name="chest"
-										value={smartExaminationData.chest}
+										name="Chest"
+										value={smartExaminationData.Chest}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -181,8 +193,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Abdomen"
-										name="abdomen"
-										value={smartExaminationData.abdomen}
+										name="Abdomen"
+										value={smartExaminationData.Abdomen}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -194,8 +206,8 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Joints"
-										name="joints"
-										value={smartExaminationData.joints}
+										name="Joints"
+										value={smartExaminationData.Joints}
 										variant="outlined"
 										size="small"
 										fullWidth
@@ -220,15 +232,15 @@ const SmartExamination = () => {
 										placeholder=""
 										id=""
 										label="Planter"
-										name="planter"
-										value={smartExaminationData.planter}
+										name="Planter"
+										value={smartExaminationData.Planter}
 										variant="outlined"
 										size="small"
 										fullWidth
 										onChange={onChangeUseState}
 									/>
 								</div>
-								<div class="flex w-full p-6">
+								{/* <div class="flex w-full p-6">
 									<TextField
 										placeholder=""
 										id=""
@@ -240,7 +252,7 @@ const SmartExamination = () => {
 										fullWidth
 										onChange={onChangeUseState}
 									/>
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>
