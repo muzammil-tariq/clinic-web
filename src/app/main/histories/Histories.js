@@ -16,7 +16,7 @@ import PatientSeacrher from '../ReusableComponent/PatientSearcher';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 
-const Histories = () => {
+const Histories = props => {
 	const dispatch = useDispatch();
 	// const historyData = useSelector(({ historyApp }) => historyApp.historyData);
 	// const { formState, watch, getValues } = methods;
@@ -29,7 +29,7 @@ const Histories = () => {
 		social: '',
 		occupational: '',
 		medical: '',
-		PatientId: ''
+		patientId: ''
 	});
 
 	const [surgicalHistory, setSurgicalHistory] = useState([]);
@@ -58,12 +58,22 @@ const Histories = () => {
 			HistoryMedication: historyMedication,
 			surgicalHistory: surgicalHistory
 		};
-		// let data = historyData;
-		debugger;
 		axios
 			.post('api/history/historycreate', data)
 			.then(async response => {
-				debugger;
+				window.location.reload(false);
+				setHistoryData({
+					hpi: '',
+					pfsh: '',
+					past: '',
+					family: '',
+					social: '',
+					occupational: '',
+					medical: '',
+					patientId: ''
+				});
+				setSurgicalHistory([]);
+				setHistoryMedication([]);
 				// await handleSaveMedicalHistory(response);
 				// await handleSaveSurgicalHistory(response);
 			})

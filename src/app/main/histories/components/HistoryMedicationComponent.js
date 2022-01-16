@@ -37,6 +37,7 @@ const HistoryMedicationComponent = props => {
 				debugger;
 			});
 	};
+
 	const handleInputChange = (e, index) => {
 		const { name, value } = e.target;
 		debugger;
@@ -60,13 +61,10 @@ const HistoryMedicationComponent = props => {
 	};
 
 	const top100Films = [
-		{ label: 'Panadol', year: 1994 },
-		{ label: 'The Godfather', year: 1972 },
-		{ label: 'The Godfather: Part II', year: 1974 },
-		{ label: 'The Dark Knight', year: 2008 },
-		{ label: '12 Angry Men', year: 1957 },
-		{ label: "Schindler's List", year: 1993 },
-		{ label: 'Pulp Fiction', year: 1994 }
+		{ label: 'Panadol', value: 'panadol' },
+		{ label: 'Brufen', value: 'brufen' },
+		{ label: 'Ponston', value: 'ponston' },
+		{ label: 'Arinac', value: 'arinac' }
 	];
 
 	return (
@@ -131,15 +129,15 @@ const HistoryMedicationComponent = props => {
 													/> */}
 													<Autocomplete
 														id="combo-box-demo"
-														options={medicines}
-														getOptionLabel={option => option.label.toString()}
+														options={top100Films}
+														getOptionLabel={option => option.value.toString()}
 														// getOptionSelected={option => option.label === 1994}'
 														onSelect={e => handleInputChange(e, i)}
 														renderInput={params => (
 															<TextField
 																{...params}
 																name="name"
-																label="Combo box"
+																label="Medicine Name"
 																variant="outlined"
 																size="small"
 																fullWidth
