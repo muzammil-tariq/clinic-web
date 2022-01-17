@@ -24,7 +24,7 @@ const main = props => {
 			<div class=" w-2/4">
 				<Typography variant="subtitle2">{props.data.title}</Typography>
 			</div>
-			<RadioGroup aria-label={removeSpace(props.data.title)} row name={removeSpace(props.data.title)}>
+			<RadioGroup aria-label={removeSpace(props.data.title)} row name="value">
 				<FormControlLabel
 					onChange={event => {
 						handleChange(event);

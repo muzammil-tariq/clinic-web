@@ -8,6 +8,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Button from '@material-ui/core/Button';
+import Item from './Components/ItemRadio';
 
 const initialRosArray = [
 	{
@@ -16,30 +17,37 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Recent Wieght Loss'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Fever'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Chill'
 			},
 			{
 				id: 4,
+				value: 'false',
 				title: 'Body aches / fatigue'
 			},
 			{
 				id: 5,
+				value: 'false',
 				title: 'Loss of Apitite'
 			},
 			{
 				id: 6,
+				value: 'false',
 				title: 'Excessive sweating'
 			},
 			{
 				id: 7,
+				value: 'false',
 				title: 'Sleep disorder'
 			}
 		]
@@ -51,18 +59,22 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Cough'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Shortness of Breath'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Wheezing'
 			},
 			{
 				id: 4,
+				value: 'false',
 				title: 'Hemoptysis'
 			}
 		]
@@ -73,18 +85,22 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Rashes'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Sores'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Blister'
 			},
 			{
 				id: 4,
+				value: 'false',
 				title: 'Growths'
 			}
 		]
@@ -95,10 +111,12 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Visual Changes'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Red eye'
 			}
 		]
@@ -109,30 +127,37 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Abdominal Pain'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Heart burn/Gerd'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Nausea/Vomiting'
 			},
 			{
 				id: 4,
+				value: 'false',
 				title: 'Constipation'
 			},
 			{
 				id: 5,
+				value: 'false',
 				title: 'Diarrhea'
 			},
 			{
 				id: 6,
+				value: 'false',
 				title: 'Hematesis'
 			},
 			{
 				id: 7,
+				value: 'false',
 				title: 'Blood in Stool'
 			}
 		]
@@ -143,18 +168,22 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Numbness/Tingling Sensation'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Sensation Loss'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Burning Sensations'
 			},
 			{
 				id: 4,
+				value: 'false',
 				title: 'Seizures'
 			}
 		]
@@ -165,18 +194,22 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Hearing Loss'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Nasal discharge'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Epitaxis'
 			},
 			{
 				id: 4,
+				value: 'false',
 				title: 'Dysphagia'
 			}
 		]
@@ -187,10 +220,12 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Allergic Reaction'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Recurrent Infection'
 			}
 		]
@@ -201,10 +236,12 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Nervousness/Anxiety'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Depression'
 			}
 		]
@@ -215,42 +252,52 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Chest Pain/Discomfort'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Palpitaion / Arrythmia'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Shortness of Breath'
 			},
 			{
 				id: 4,
+				value: 'false',
 				title: 'Perepheral Edema'
 			},
 			{
 				id: 5,
+				value: 'false',
 				title: 'Orthopnea'
 			},
 			{
 				id: 6,
+				value: 'false',
 				title: 'PND'
 			},
 			{
 				id: 7,
+				value: 'false',
 				title: 'Syncope'
 			},
 			{
 				id: 8,
+				value: 'false',
 				title: 'Vericose Vaiens'
 			},
 			{
 				id: 9,
+				value: 'false',
 				title: 'Cramping in Legs'
 			},
 			{
 				id: 10,
+				value: 'false',
 				title: 'Others'
 			}
 		]
@@ -261,22 +308,27 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Frequency'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Urgency'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Incontenence'
 			},
 			{
 				id: 4,
+				value: 'false',
 				title: 'Dysuria'
 			},
 			{
 				id: 5,
+				value: 'false',
 				title: 'Hematuria'
 			}
 		]
@@ -287,26 +339,32 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Heat intolerence'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Cold intolerence'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Polydypsia'
 			},
 			{
 				id: 4,
+				value: 'false',
 				title: 'Polyuria'
 			},
 			{
 				id: 5,
+				value: 'false',
 				title: 'Polyphagia'
 			},
 			{
 				id: 6,
+				value: 'false',
 				title: 'Weight Gain'
 			}
 		]
@@ -317,18 +375,22 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Joint Pain/Swelling'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Stiffness'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Muscle pain'
 			},
 			{
 				id: 4,
+				value: 'false',
 				title: 'Muscle pain'
 			}
 		]
@@ -339,10 +401,12 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Abnormal Bleeding'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Brusing'
 			}
 		]
@@ -353,14 +417,17 @@ const initialRosArray = [
 		obj: [
 			{
 				id: 1,
+				value: 'false',
 				title: 'Menorrhagia'
 			},
 			{
 				id: 2,
+				value: 'false',
 				title: 'Vaginal Discharge'
 			},
 			{
 				id: 3,
+				value: 'false',
 				title: 'Lump Breast'
 			}
 		]
@@ -409,6 +476,7 @@ const ROS = () => {
 	});
 
 	function handleChange(e) {
+		debugger;
 		const { name, value } = e.target;
 		setRosData(prevState => ({ ...prevState, [name]: value }));
 	}
@@ -424,6 +492,7 @@ const ROS = () => {
 				debugger;
 			});
 	}
+
 	return (
 		<FusePageSimple
 			content={
@@ -441,38 +510,129 @@ const ROS = () => {
 							</Button>
 						</div>
 						<div class=" w-full border p-10 rounded border-gray-400 ">
-							<Body data={rosDataa} onChange={handleChange} />
+							{/* <Body data={rosDataa} onChange={handleChange} /> */}
 							<div class="grid grid-cols-2 gap-4">
-								<div class=" p-6">
-									<div class="w-full border p-10 rounded border-gray-400 bg-white">
-										<div class="py-10">
+								<div class="p-6">
+									<div class="w-full border p-20 rounded border-gray-400 bg-white">
+										<div class="py-5">
 											<Typography variant="subtitle2">
 												<b>Constitutional / General</b>
 											</Typography>
 										</div>
-										<div class="flex items-center">
-											<div class=" w-2/4">
-												<Typography variant="subtitle2">Abdominal Pain</Typography>
-											</div>
-											<RadioGroup aria-label="abdominalPain" row name="abdominalPain">
-												<FormControlLabel
-													onChange={event => {
-														handleChange(event);
-													}}
-													value="true"
-													control={<Radio />}
-													label="Yes"
-												/>
-												<FormControlLabel
-													onChange={event => {
-														handleChange(event);
-													}}
-													value="false"
-													control={<Radio />}
-													label="No"
-												/>
-											</RadioGroup>
+										<Item
+											label="Recent Wieght Loss"
+											name="weightLoss"
+											value={rosData.weightLoss}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Fever"
+											name="fever"
+											value={rosData.fever}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Chill"
+											name="chill"
+											value={rosData.chill}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Body aches / fatigue"
+											name="bodyAshes"
+											value={rosData.bodyAshes}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Loss of Apitite"
+											name="lossOfApitite"
+											value={rosData.lossOfApitite}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Excessive sweating"
+											name="excessiveSwesting"
+											value={rosData.excessiveSwesting}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Sleep disorder"
+											name="sleepDisorder"
+											value={rosData.sleepDisorder}
+											onChange={handleChange}
+										/>
+									</div>
+								</div>
+							</div>
+
+							<div class="grid grid-cols-2 gap-4">
+								<div class="p-6">
+									<div class="w-full border p-20 rounded border-gray-400 bg-white">
+										<div class="py-5">
+											<Typography variant="subtitle2">
+												<b>Respiratory</b>
+											</Typography>
 										</div>
+										<Item
+											label="Cough"
+											name="cough"
+											value={rosData.cough}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Shortness of Breath"
+											name="respiratoryShortnessOfBreath"
+											value={rosData.respiratoryShortnessOfBreath}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Wheezing"
+											name="wheezing"
+											value={rosData.wheezing}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Hemoptysis"
+											name="hemoptysis"
+											value={rosData.hemoptysis}
+											onChange={handleChange}
+										/>
+									</div>
+								</div>
+							</div>
+
+							<div class="grid grid-cols-2 gap-4">
+								<div class="p-6">
+									<div class="w-full border p-20 rounded border-gray-400 bg-white">
+										<div class="py-5">
+											<Typography variant="subtitle2">
+												<b>Skin & Integumantary</b>
+											</Typography>
+										</div>
+										<Item
+											label="Rashes"
+											name="rashes"
+											value={rosData.rashes}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Sores"
+											name="sores"
+											value={rosData.sores}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Blister"
+											name="blister"
+											value={rosData.blister}
+											onChange={handleChange}
+										/>
+										<Item
+											label="Growths"
+											name="growths"
+											value={rosData.growths}
+											onChange={handleChange}
+										/>
 									</div>
 								</div>
 							</div>

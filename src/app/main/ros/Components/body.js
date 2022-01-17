@@ -5,6 +5,7 @@ import Main from '../Components/main';
 
 const body = props => {
 	function handleChange(indextop, index, property, value) {
+		debugger;
 		// alert(`${indextop} and  ${index} and ${property} and ${value} and`)
 		props.data[indextop].obj[index][property] = value;
 		// alert(JSON.stringify(props.data))
