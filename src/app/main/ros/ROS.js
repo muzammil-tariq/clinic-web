@@ -434,6 +434,9 @@ const initialRosArray = [
 	}
 ];
 
+right: 30;
+left: 36;
+
 const ROS = () => {
 	const [rosDataa, setRosDataa] = useState(initialRosArray);
 	const [rosData, setRosData] = useState({
@@ -660,6 +663,7 @@ const ROS = () => {
 									</div>
 								</div>
 							</div>
+
 							<div class="grid grid-cols-2 gap-4">
 								<div class="p-6">
 									<div class="w-full border p-20 rounded border-gray-400 bg-white">
@@ -713,6 +717,7 @@ const ROS = () => {
 									</div>
 								</div>
 							</div>
+
 							<div class="grid grid-cols-2 gap-4">
 								<div class="p-6">
 									<div class="w-full border p-20 rounded border-gray-400 bg-white">
@@ -736,6 +741,7 @@ const ROS = () => {
 									</div>
 								</div>
 							</div>
+
 							<div class="grid grid-cols-2 gap-4">
 								<div class="p-6">
 									<div class="w-full border p-20 rounded border-gray-400 bg-white">
